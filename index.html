@@ -7,6 +7,40 @@
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    
+    <script>
+        
+
+
+        //The objective is to create a rock paper scissor game 
+        
+        //Create const for rock
+        const rock = 'rock';
+        //Create const for paper
+        const paper = 'paper';
+        //Create const for scissors
+        const scissors = 'scissors';
+        //Create a function that return a random choice in between rock, paper, scissor
+        function getComputerChoice() {
+            function random() {
+                const max = 3;
+                return Math.floor(Math.random() * max);
+                }
+            if (random() === 0) {
+                return rock;
+            } else if (random() === 1) {
+                return paper;
+            } else {
+                return scissors;
+            }
+        }
+        // create a function that play a round 
+        
+
+        //Ask the user to choose between rock, paper, scissor 
+        
+        //Oppose the UserChoice to the ComputerChoice
+        //Output the result of the opposition 
+
+    </script>
 </body>
 </html>
