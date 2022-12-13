@@ -1,0 +1,1 @@
+This is my first js project. It will integrate knowledge about variables, data types, methods, conditional, functions and more.
