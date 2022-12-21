@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Create input for player 
+        function playerChoice() {
+            return prompt('rock, paper or scissors', 'rock');
+        } 
+        //Create input for CMP
+        function cmpChoice() {
+            function random() {
+                return Math.floor(Math.random() * 3);
+            }
+            switch (random()) {
+                case 0:
+                    return 'rock'
+                    break;
+                case 1:
+                    return 'paper'
+                    break;
+                case 2: 
+                    return 'scissors'
+                    break;
+            }
+        }
+        //Create opposition 
+        function opposition(p1,cmp) {
+            p1 = playerChoice();
+            cmp = cmpChoice();
+
+            let result = (p1 === cmp) ? `Equal ${p1} vs ${cmp}` :
+                        ((p1 === 'rock' && cmp === 'scissors') || 
+                        (p1 === 'paper' && cmp === 'rock') || 
+                        (p1 === 'scissors' && cmp === 'paper')) ?
+                        `You win ${p1} beat ${cmp}` :  
+                        ((p1 === 'rock' && cmp === 'paper') ||
+                        (p1 === 'paper' && cmp === 'scissors') ||
+                        (p1 === 'scissors' && cmp === 'rock')) ?
+                        `You lose ${p1} is defeat by ${cmp}` :
+                        '';
+            return result; 
+        }                 
+        //Output result & Loop the whole thing 
+        for (let i=1; i <= 5; i++) {
+        console.log(opposition())
+        }
+
+
+    </script>
+    
+</body>
+</html>
