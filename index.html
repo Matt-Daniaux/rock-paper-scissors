@@ -7,15 +7,14 @@
     <title>Rock Paper Scissors</title>
 </head>
 <body>
+    <div class="container"></div>
     <script>
-         //The objective is to create a rock paper scissor game 
+
+      
+    
+
+        //The objective is to create a rock paper scissor game 
         
-        //Create const for rock
-        const rock = 'rock';
-        //Create const for paper
-        const paper = 'paper';
-        //Create const for scissors
-        const scissors = 'scissors';
         
         //Create a function that return a random choice in between rock, paper, scissor
         function getComputerChoice() {
@@ -24,43 +23,89 @@
                 return Math.floor(Math.random() * max);
                 }
             if (random() === 0) {
-                return rock;
+                return 'rock';
             } else if (random() === 1) {
-                return paper;
+                return 'paper';
             } else {
-                return scissors;
+                return 'scissors';
             }
         }
         //Ask the user to choose between rock, paper, scissor 
-        function selection() {
+        /*function selection() {
             const choice = prompt('Enter rock, paper or scissors', 'rock');
             if (choice === null) {
                 return choice;
             } else {
                 return choice.toLowerCase();
+            } 
+        }*/
+
+        /*function selection() {
+            if (btn1) {
+                return 'rock'
+            } else if (btn2) {
+                return 'paper'
+            } else if (btn3) {
+                return 'scissors'
             }
-        }
+        }*/
+        let selection = '';
+
         // create a function that play a round 
         function playRound(playerSelection, computerSelection) {
-        playerSelection = selection();
+        playerSelection = selection;
         computerSelection = getComputerChoice()
             if (playerSelection === computerSelection) {
-                return (`Too bad, ${playerSelection} vs ${computerSelection} are equal`)
-            } else if   ((playerSelection === rock && computerSelection === scissors) || 
-                         (playerSelection === scissors && computerSelection === paper) ||
-                         (playerSelection === paper && computerSelection === rock)) {
-                return (`You win dumbass, ${playerSelection} beat ${computerSelection}`)
+                div1.textContent = `Too bad, ${playerSelection} vs ${computerSelection} are equal`;
+            } else if   ((playerSelection === 'rock' && computerSelection === 'scissors') || 
+                         (playerSelection === 'scissors' && computerSelection === 'paper') ||
+                         (playerSelection === 'paper' && computerSelection === 'rock')) {
+                div1.textContent = `You win dumbass, ${playerSelection} beat ${computerSelection}`;
             } else if (playerSelection === null) {
-                return (`Nooooo, don't cancellll meeee !!! Common !! Play with me !!!`)
+                div1.textContent = `Nooooo, don't cancellll meeee !!! Common !! Play with me !!!`;
             } 
             else {
-                return (`You lose dumbass, ${playerSelection} lose to ${computerSelection}`)
+                div1.textContent = `You lose dumbass, ${playerSelection} lose to ${computerSelection}`;
             }
         }
+        
+        
         //Loop to play as many round as you want 
-        for (let i = 0; i < 5; i++) {
+        /*for (let i = 0; i < 5; i++) {
             console.log(playRound())
-        }        
+        } */
+        //Create UI
+
+        const container = document.querySelector('.container')
+
+        const btn1 = document.createElement('button');
+        btn1.textContent = 'rock';
+        
+        const btn2 = document.createElement('button');
+        btn2.textContent = 'paper';
+        
+        const btn3 = document.createElement('button');
+        btn3.textContent = 'scissors';
+        
+        const div1 = document.createElement('div');
+        
+        
+        container.appendChild(btn1)
+        btn1.addEventListener('click', () => {selection = 'rock'}); 
+        btn1.addEventListener('click', playRound) 
+
+        container.appendChild(btn2)
+        btn2.addEventListener('click', () => {selection = 'paper'}); 
+        btn2.addEventListener('click', playRound)
+        
+        container.appendChild(btn3)
+        btn3.addEventListener('click', () => {selection = 'scissors'}); 
+        btn3.addEventListener('click', playRound)
+
+        container.appendChild(div1)
+
+        
+
     </script>
 </body>
 </html>
