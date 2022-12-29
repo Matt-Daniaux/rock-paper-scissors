@@ -1,0 +1,104 @@
+* {
+    background-color: rgb(5, 10, 25);
+    font-family: 'Chalkduster';
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 400%;
+    border-bottom: 3px solid rgb(45, 40, 32);
+    color: rgb(0, 255, 234);
+}
+
+.PVsCmpSelection {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    gap: 10%
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    margin-left: 10%;
+    
+}
+
+button {
+    border: 0px;
+    height: 100px;
+    width: 400px;
+    font-size: 350%;
+    font-weight: bolder;
+}
+
+#rock {
+    color: rgb(112, 99, 99);
+}
+
+#paper {
+    color: rgb(209, 211, 212);
+}
+
+#scissors {
+    color: rgb(139, 84, 110);
+}
+
+.vs {
+    color: rgb(255, 238, 0);
+    font-size: 500%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cmpSelection {
+    color: rgb(183, 0, 0);
+    font-size: 400%;
+    height: 100px;
+    width: 400px;
+    margin-right: 10%;
+    text-align: center;
+    font-weight: bolder;
+}
+
+
+
+
+.displayResultAndScore {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 20vh;
+    margin-top: 2vh;
+
+}
+
+.resultRound {
+    color: rgb(255, 255, 255);
+    font-size: 200%;
+}
+
+.gameScore {
+    color: rgb(56, 207, 194);
+    font-size: 250%;
+}
+
+
+.wholeGameResult {
+    font-size: 500%;
+    color: rgb(183, 0, 0);
+}
